@@ -1,0 +1,126 @@
+WindowManager:
+    FirstPage:
+    SecondPage:
+    HomePage:
+
+<FirstPage>:
+    name: "first"
+    size_hint: .7,1
+    pos_hint: {"center_x":.5, "center_y":.5}
+    GridLayout:
+        spacing: "5dp"
+        cols:1
+        Image:
+            source:"AlebrijeGato.png"
+
+        GridLayout:
+            cols:2
+            spacing: "5dp"
+            Label:
+                text: "Name"
+                color: 0,0,0,1
+                bold: True
+                font_size: "22dp"
+            TextInput:
+                multiline: False
+            Label:
+                text: "Id"
+                color: 0,0,0,1
+                bold: True
+                font_size: "22dp"
+            TextInput:
+                multiline: False
+            Label:
+                text: "Deparment"
+                color: 0,0,0,1
+                bold: True
+                font_size: "22dp"
+            TextInput:
+                multiline: False
+            Label:
+                text: "Group"
+                color: 0,0,0,1
+                bold: True
+                font_size: "22dp"
+            TextInput:
+                multiline: False
+
+        Button:
+            text:"Register Here"       
+            bold: True
+            font_size:"30dp"
+            background_color: 1,1,0,1
+            background_normal:""
+            size_hint:1,.4
+            on_press: root.on_press_button()
+
+        Button:
+            text:"LogIn"       
+            bold: True
+            font_size:"30dp"
+            background_color: 1,1,0,1
+            background_normal:""
+            size_hint:1,.4
+            on_release: app.root.current="second"
+
+        Label:
+            text: root.my_text
+            bold: True
+            font_size: "30dp"
+            color: 1,0,1,1
+
+<SecondPage>:
+    name: "second"
+    size_hint: .7,.8
+    pos_hint: {"center_x":.5, "center_y":.5}
+    GridLayout:
+        spacing: "5dp"
+        cols:1
+        Image:
+            source:"AlebrijeGato.png"
+
+        GridLayout:
+            cols:2
+            spacing: "5dp"
+            Label:
+                text: "User Name"
+                color: 0,0,0,1
+                bold: True
+                font_size: "22dp"
+            TextInput:
+                multiline: False
+            Label:
+                text: "User Id"
+                color: 0,0,0,1
+                bold: True
+                font_size: "22dp"
+            TextInput:
+                multiline: False
+            
+            
+
+        Button:
+            text:"Home Page "       
+            bold: True
+            font_size:"30dp"
+            background_color: 1,1,0,1
+            background_normal:""
+            size_hint:1,.4
+            on_release: app.root.current="home"
+
+<HomePage>
+    name: "home"
+    GridLayout:
+        cols:1
+        Label:
+            text:"Welcome To Home Page"
+
+        Button:
+            text:"Back to LogIn"
+            on_release: app.root.current="second"
+
+
+                
+                
+                
+                    
